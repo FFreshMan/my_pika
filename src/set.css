@@ -1,0 +1,93 @@
+*{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+*::before,::after{
+    box-sizing: border-box;
+    padding: 0;
+    margin: 0;
+}
+body{
+    background: #ffe600;
+    min-height: 100vh;
+    position: relative;
+  }
+.html{
+    position: fixed;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 50vh;
+
+} 
+.demo2{
+    display: none;
+}
+.demo{
+    position: fixed;
+    top: 0;
+    width: 100%;
+    height: 50vh;
+    overflow-y: scroll;
+    color: black;
+    font-weight:bold;
+    font-family: Arial, Helvetica, sans-serif;
+    font-size: 20px;
+    display: block;
+}
+.demo::-webkit-scrollbar{
+    display: none;
+}
+/* 用于隐藏滚动条但是还是能用滚轮滚动 */
+@keyframes wave{
+    0%{
+        transform:rotate(0deg);
+    }
+    33%{    
+        transform:rotate(15deg);
+    }
+    66%{
+        transform:rotate(-15deg);
+    }
+    100%{
+        transform:rotate(0deg);
+
+    }
+}
+.san:hover{
+    transform-origin: center bottom;
+    animation: wave 0.5s linear infinite ;
+    
+}
+.face > img{
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    display: none;
+}
+.face.face_left > img{
+    transform: rotateY(180deg);
+    transform-origin: 0 0;
+
+}
+.face:hover > img{
+    display: block;
+}
+.buttons{
+    z-index: 10;
+    position: absolute;
+    right: 30px;
+    top: 20px;
+    display: flex;
+   flex-direction: column;
+}
+button{
+    direction: none;
+    width: 60px;
+    height: 40px;
+    margin-top: 10px;
+    background: green;
+    color: pink;
+    border-radius: 10px;
+}
